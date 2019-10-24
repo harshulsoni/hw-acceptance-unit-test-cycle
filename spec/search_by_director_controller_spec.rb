@@ -10,6 +10,7 @@ describe MoviesController, type: :controller do
             expect(response).to render_template("searchByDirector")
             get :searchByDirector, :id => movie_2
             expect(response).to render_template("searchByDirector")
+            assigns(:movies).should eq([movie_1, movie_2])
         end
     end
 
